@@ -1,4 +1,4 @@
-package dk.dbs.dota;
+package me.dunit.dota;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -105,7 +105,7 @@ class OpenDotaAPIWrapper {
     }
 
     static JSONArray getHeroStats() {
-        String apiFunc = "proMatches";
+        String apiFunc = "herostats";
         return new JSONArray(getData(apiBase + apiFunc));
     }
 

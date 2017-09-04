@@ -1,4 +1,4 @@
-package dk.dbs.dota;
+package me.dunit.dota;
 
 import org.junit.Test;
 
