@@ -1,13 +1,13 @@
 package me.dunit.dota;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
  * Test of API calls
- *
+ * <p>
  * Only HTTP errors are caught
  * This is not a correctness test
- *
  */
 public class OpenDotaAPIWrapperTest {
 
@@ -126,6 +126,13 @@ public class OpenDotaAPIWrapperTest {
     @Test
     public void getHeroes() throws Exception {
         OpenDotaAPIWrapper.getHeroes();
+    }
+
+    // TODO: Create proper test
+    @Ignore
+    @Test
+    public void getHeroesImage() throws Exception {
+        OpenDotaAPIWrapper.getHeroesImage(id, null);
     }
 
 }
