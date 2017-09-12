@@ -5,10 +5,13 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @SuppressWarnings("UnusedReturnValue")
 class OpenDotaAPIWrapper {
@@ -127,6 +130,25 @@ class OpenDotaAPIWrapper {
     static JSONArray getHeroes() {
         String apiFunc = "heroes";
         return new JSONArray(getData(apiBase + apiFunc));
+    }
+
+    static void getHeroesImage(int id, String path) throws IOException {
+        JSONArray heroes = getHeroStats();
+
+        // Ugly hack, should be handled more gracefully
+        // This is done because the index and id is not consistent
+        JSONObject hero;
+        if (id < 23) {
+            hero = heroes.getJSONObject(id - 1);
+        } else {
+            hero = heroes.getJSONObject(id - 2);
+        }
+
+        String apiFunc = hero.getString("img");
+
+        try(InputStream in = new URL(apiBase.substring(0, apiBase.length() - 5) + apiFunc).openStream()){
+            Files.copy(in, Paths.get(path + "/" + id + ".png"));
+        }
     }
 
     private static String getData(String apiCall) {

@@ -2,6 +2,13 @@ package me.dunit.dota;
 
 import org.junit.Test;
 
+/**
+ * Test of API calls
+ *
+ * Only HTTP errors are caught
+ * This is not a correctness test
+ *
+ */
 public class OpenDotaAPIWrapperTest {
 
     private final int id = 1;
