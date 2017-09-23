@@ -2,23 +2,34 @@
 
 Java wrapper for the Open Dota API <br>
 
-Doc: [OpenDota API ](https://docs.opendota.com)
+Please respect the usage limitations (keep request rate to approximately 3/s) <br>
+
+For more information: [OpenDota API ](https://docs.opendota.com)
 
 ## Usage
 
 Build
 
 ```
-cd OpenDotaApiWrapper
 mvn install
 ```
 
-Include in pom
+Dependency
 
 ```
 <dependency>
-    <groupId>dk.dbs.dota</groupId>
+    <groupId>me.dunit.dota</groupId>
     <artifactId>open-dota-api-wrapper</artifactId>
     <version>$VERSION</version>
 </dependency>
+```
+
+Example 1
+```
+JSONArray heroes = OpenDotaAPIWrapper.getHeroStats();
+```
+
+Example 2
+```
+OpenDotaAPIWrapper.getHeroImage(hero.getId(), IMAGE_LOCATION);
 ```

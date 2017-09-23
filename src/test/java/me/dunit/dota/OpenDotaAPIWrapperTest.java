@@ -5,82 +5,82 @@ import org.junit.Test;
 
 /**
  * Test of API calls
- * <p>
  * Only HTTP errors are caught
  * This is not a correctness test
  */
 public class OpenDotaAPIWrapperTest {
 
-    private final int id = 1;
+    private final int ID = 1;
+    private final String IMAGE_LOCATION = null;
 
     @Test
     public void getMatches() throws Exception {
-        OpenDotaAPIWrapper.getMatches(id);
+        OpenDotaAPIWrapper.getMatches(ID);
     }
 
     @Test
-    public void getPlayers() throws Exception {
-        OpenDotaAPIWrapper.getPlayers(id);
+    public void getPlayer() throws Exception {
+        OpenDotaAPIWrapper.getPlayer(ID);
     }
 
     @Test
-    public void getPlayersWL() throws Exception {
-        OpenDotaAPIWrapper.getPlayersWL(id);
+    public void getPlayerWL() throws Exception {
+        OpenDotaAPIWrapper.getPlayerWL(ID);
     }
 
     @Test
-    public void getPlayersRecentMatches() throws Exception {
-        OpenDotaAPIWrapper.getPlayersRecentMatches(id);
+    public void getPlayerRecentMatches() throws Exception {
+        OpenDotaAPIWrapper.getPlayerRecentMatches(ID);
     }
 
     @Test
-    public void getPlayersMatches() throws Exception {
-        OpenDotaAPIWrapper.getPlayersMatches(id);
+    public void getPlayerMatches() throws Exception {
+        OpenDotaAPIWrapper.getPlayerMatches(ID);
     }
 
     @Test
-    public void getPlayersHeroes() throws Exception {
-        OpenDotaAPIWrapper.getPlayersHeroes(id);
+    public void getPlayerHeroes() throws Exception {
+        OpenDotaAPIWrapper.getPlayerHeroes(ID);
     }
 
     @Test
-    public void getPlayersPeers() throws Exception {
-        OpenDotaAPIWrapper.getPlayersPeers(id);
+    public void getPlayerPeers() throws Exception {
+        OpenDotaAPIWrapper.getPlayerPeers(ID);
     }
 
     @Test
-    public void getPlayersPros() throws Exception {
-        OpenDotaAPIWrapper.getPlayersPros(id);
+    public void getPlayerPros() throws Exception {
+        OpenDotaAPIWrapper.getPlayerPros(ID);
     }
 
     @Test
-    public void getPlayersTotals() throws Exception {
-        OpenDotaAPIWrapper.getPlayersTotals(id);
+    public void getPlayerTotals() throws Exception {
+        OpenDotaAPIWrapper.getPlayerTotals(ID);
     }
 
     @Test
-    public void getPlayersCounts() throws Exception {
-        OpenDotaAPIWrapper.getPlayersCounts(id);
+    public void getPlayerCounts() throws Exception {
+        OpenDotaAPIWrapper.getPlayerCounts(ID);
     }
 
     @Test
-    public void getPlayersWardMap() throws Exception {
-        OpenDotaAPIWrapper.getPlayersWardMap(id);
+    public void getPlayerWardMap() throws Exception {
+        OpenDotaAPIWrapper.getPlayerWardMap(ID);
     }
 
     @Test
-    public void getPlayersWordCloud() throws Exception {
-        OpenDotaAPIWrapper.getPlayersWordCloud(id);
+    public void getPlayerWordCloud() throws Exception {
+        OpenDotaAPIWrapper.getPlayerWordCloud(ID);
     }
 
     @Test
-    public void getPlayersRatings() throws Exception {
-        OpenDotaAPIWrapper.getPlayersRatings(id);
+    public void getPlayerRatings() throws Exception {
+        OpenDotaAPIWrapper.getPlayerRatings(ID);
     }
 
     @Test
-    public void getPlayersRankings() throws Exception {
-        OpenDotaAPIWrapper.getPlayersRankings(id);
+    public void getPlayerRankings() throws Exception {
+        OpenDotaAPIWrapper.getPlayerRankings(ID);
     }
 
     @Test
@@ -90,7 +90,7 @@ public class OpenDotaAPIWrapperTest {
 
     @Test
     public void postPlayerRefresh() throws Exception {
-        OpenDotaAPIWrapper.postPlayerRefresh(id);
+        OpenDotaAPIWrapper.postPlayerRefresh(ID);
     }
 
     @Test
@@ -131,8 +131,8 @@ public class OpenDotaAPIWrapperTest {
     // TODO: Create proper test
     @Ignore
     @Test
-    public void getHeroesImage() throws Exception {
-        OpenDotaAPIWrapper.getHeroesImage(id, null);
+    public void getHeroImage() throws Exception {
+        OpenDotaAPIWrapper.getHeroImage(ID, IMAGE_LOCATION);
     }
 
 }
