@@ -33,3 +33,12 @@ Example 2
 ```
 OpenDotaAPIWrapper.getHeroImage(hero.getId(), IMAGE_LOCATION);
 ```
+
+## Todo
+
+- Optional query parameters support
+- Implement missing API calls
+- Handle hero id/index more gracefully
+- Test bad API GET response
+- Test bad API POST response
+- Correctness tests

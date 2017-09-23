@@ -1,7 +1,13 @@
 package me.dunit.dota;
 
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
+
+import java.io.File;
+
+// TODO: Correctness tests
 
 /**
  * Test of API calls
@@ -11,7 +17,9 @@ import org.junit.Test;
 public class OpenDotaAPIWrapperTest {
 
     private final int ID = 1;
-    private final String IMAGE_LOCATION = null;
+
+    @Rule
+    public TemporaryFolder tmpFolder = new TemporaryFolder();
 
     @Test
     public void getMatches() throws Exception {
@@ -128,11 +136,31 @@ public class OpenDotaAPIWrapperTest {
         OpenDotaAPIWrapper.getHeroes();
     }
 
-    // TODO: Create proper test
-    @Ignore
     @Test
     public void getHeroImage() throws Exception {
-        OpenDotaAPIWrapper.getHeroImage(ID, IMAGE_LOCATION);
+        File getHeroImageTmpTestFolder = tmpFolder.newFolder("getHeroImageTmpTestFolder");
+        OpenDotaAPIWrapper.getHeroImage(ID, getHeroImageTmpTestFolder.toString());
+    }
+
+    // A second test is performed to address the id/index inconsistency
+    @Test
+    public void getHeroImage2() throws Exception {
+        File getHeroImageTmpTestFolder = tmpFolder.newFolder("getHeroImageTmpTestFolder2");
+        OpenDotaAPIWrapper.getHeroImage(ID + 50, getHeroImageTmpTestFolder.toString());
+    }
+
+    // TODO: Test bad API GET response
+    @Ignore
+    @Test
+    public void badAPIGETResponse() {
+        OpenDotaAPIWrapper.getHeroes();
+    }
+
+    // TODO: Test bad API POST response
+    @Ignore
+    @Test
+    public void badAPIPostResponse() {
+        OpenDotaAPIWrapper.postPlayerRefresh(ID);
     }
 
 }

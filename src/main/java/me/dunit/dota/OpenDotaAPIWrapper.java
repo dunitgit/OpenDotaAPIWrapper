@@ -309,6 +309,7 @@ class OpenDotaAPIWrapper {
     static void getHeroImage(int id, String path) throws IOException {
         JSONArray heroes = getHeroStats();
 
+        // TODO: Handle index inconsistency
         // Ugly hack, should be handled more gracefully
         // This is done because the index and id is not consistent
         JSONObject hero;
