@@ -19,7 +19,7 @@ public class OpenDotaAPIWrapperTest {
     private final int ID = 1;
 
     @Rule
-    public TemporaryFolder tmpFolder = new TemporaryFolder();
+    public final TemporaryFolder tmpFolder = new TemporaryFolder();
 
     @Test
     public void getMatches() throws Exception {
@@ -150,14 +150,12 @@ public class OpenDotaAPIWrapperTest {
     }
 
     // TODO: Test bad API GET response
-    @Ignore
     @Test
     public void badAPIGETResponse() {
         OpenDotaAPIWrapper.getHeroes();
     }
 
     // TODO: Test bad API POST response
-    @Ignore
     @Test
     public void badAPIPostResponse() {
         OpenDotaAPIWrapper.postPlayerRefresh(ID);

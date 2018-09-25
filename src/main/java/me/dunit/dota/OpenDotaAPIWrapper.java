@@ -378,8 +378,10 @@ class OpenDotaAPIWrapper {
             URL url = new URL(apiCall);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
+            conn.setFixedLengthStreamingMode(0);
+            conn.setDoOutput(true);
 
-            if (conn.getResponseCode() != 200) {
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new RuntimeException("Failed : HTTP error code : "
                         + conn.getResponseCode());
             }
