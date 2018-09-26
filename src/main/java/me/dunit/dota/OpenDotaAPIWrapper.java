@@ -21,7 +21,7 @@ import java.nio.file.Paths;
  * Please respect the usage limitations (keep request rate to approximately 3/s)
  */
 @SuppressWarnings("UnusedReturnValue")
-class OpenDotaAPIWrapper {
+public class OpenDotaAPIWrapper {
     static private final String apiBase = "https://api.opendota.com/api/";
 
     /**
@@ -30,7 +30,7 @@ class OpenDotaAPIWrapper {
      * @param id match id.
      * @return JSONObject containing match information.
      */
-    static JSONObject getMatches(int id) {
+    public static JSONObject getMatches(long id) {
         String apiFunc = "matches/" + id;
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -41,7 +41,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONObject containing player information.
      */
-    static JSONObject getPlayer(int id) {
+    public static JSONObject getPlayer(final long id) {
         String apiFunc = "/players/" + id;
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -54,7 +54,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONObject containing win/loss count.
      */
-    static JSONObject getPlayerWL(int id) {
+    public static JSONObject getPlayerWL(final long id) {
         String apiFunc = "/players/" + id + "/wl";
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -65,7 +65,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONArray containing recent matches.
      */
-    static JSONArray getPlayerRecentMatches(int id) {
+    public static JSONArray getPlayerRecentMatches(final long id) {
         String apiFunc = "/players/" + id + "/recentmatches";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -78,7 +78,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONArray containing matches.
      */
-    static JSONArray getPlayerMatches(int id) {
+    public static JSONArray getPlayerMatches(final long id) {
         String apiFunc = "/players/" + id + "/matches";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -91,7 +91,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONArray containing heroes played.
      */
-    static JSONArray getPlayerHeroes(int id) {
+    public static JSONArray getPlayerHeroes(final long id) {
         String apiFunc = "/players/" + id + "/heroes";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -104,7 +104,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONArray containing players played with.
      */
-    static JSONArray getPlayerPeers(int id) {
+    public static JSONArray getPlayerPeers(final long id) {
         String apiFunc = "/players/" + id + "/peers";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -117,7 +117,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONArray containing pro players played with.
      */
-    static JSONArray getPlayerPros(int id) {
+    public static JSONArray getPlayerPros(final long id) {
         String apiFunc = "/players/" + id + "/pros";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -130,7 +130,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONArray containing player life time stats.
      */
-    static JSONArray getPlayerTotals(int id) {
+    public static JSONArray getPlayerTotals(final long id) {
         String apiFunc = "/players/" + id + "/totals";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -144,7 +144,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONObject containing player win/loss counts.
      */
-    static JSONObject getPlayerCounts(int id) {
+    public static JSONObject getPlayerCounts(final long id) {
         String apiFunc = "/players/" + id + "/counts";
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -157,7 +157,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONObject containing number of placed in played matches.
      */
-    static JSONObject getPlayerWardMap(int id) {
+    public static JSONObject getPlayerWardMap(final long id) {
         String apiFunc = "/players/" + id + "/wardmap";
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -170,7 +170,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONObject containing words said/read.
      */
-    static JSONObject getPlayerWordCloud(int id) {
+    public static JSONObject getPlayerWordCloud(final long id) {
         String apiFunc = "/players/" + id + "/wordcloud";
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -181,7 +181,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONArray containing player rating.
      */
-    static JSONArray getPlayerRatings(int id) {
+    public static JSONArray getPlayerRatings(final long id) {
         String apiFunc = "/players/" + id + "/ratings";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -192,7 +192,7 @@ class OpenDotaAPIWrapper {
      * @param id player id.
      * @return JSONArray containing player rankings.
      */
-    static JSONArray getPlayerRankings(int id) {
+    public static JSONArray getPlayerRankings(final long id) {
         String apiFunc = "/players/" + id + "/rankings";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -204,7 +204,7 @@ class OpenDotaAPIWrapper {
      *
      * @param id player id.
      */
-    static void postPlayerRefresh(int id) {
+    public static void postPlayerRefresh(final long id) {
         String apiFunc = "/players/" + id + "/refresh";
         postData(apiBase + apiFunc);
     }
@@ -214,7 +214,7 @@ class OpenDotaAPIWrapper {
      *
      * @return JSONArray containing pro players.
      */
-    static JSONArray getProPlayers() {
+    public static JSONArray getProPlayers() {
         String apiFunc = "proplayers";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -226,7 +226,7 @@ class OpenDotaAPIWrapper {
      *
      * @return JSONArray containing ongoing pro matches.
      */
-    static JSONArray getProMatches() {
+    public static JSONArray getProMatches() {
         String apiFunc = "proplayers";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -238,7 +238,7 @@ class OpenDotaAPIWrapper {
      *
      * @return JSONArray containing public matches.
      */
-    static JSONArray getPublicMatches() {
+    public static JSONArray getPublicMatches() {
         String apiFunc = "publicMatches";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -249,7 +249,7 @@ class OpenDotaAPIWrapper {
      *
      * @return JSONArray with detailed heroes information.
      */
-    static JSONArray getHeroStats() {
+    public static JSONArray getHeroStats() {
         String apiFunc = "herostats";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -259,7 +259,7 @@ class OpenDotaAPIWrapper {
      *
      * @return JSONObject containing MMR distribution.
      */
-    static JSONObject getDistributions() {
+    public static JSONObject getDistributions() {
         String apiFunc = "distributions";
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -273,7 +273,7 @@ class OpenDotaAPIWrapper {
      *
      * @return JSONObject containing service statistics.
      */
-    static JSONObject getStatus() {
+    public static JSONObject getStatus() {
         String apiFunc = "status";
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -283,7 +283,7 @@ class OpenDotaAPIWrapper {
      *
      * @return JSONObject containing service health information.
      */
-    static JSONObject getHealth() {
+    public static JSONObject getHealth() {
         String apiFunc = "health";
         return new JSONObject(getData(apiBase + apiFunc));
     }
@@ -292,9 +292,9 @@ class OpenDotaAPIWrapper {
      * Returns simple information for each hero.
      *
      * @return JSONArray containing simple hero information.
-     * @see me.dunit.dota.OpenDotaAPIWrapper#getHeroStats
+     * @see OpenDotaAPIWrapper#getHeroStats
      */
-    static JSONArray getHeroes() {
+    public static JSONArray getHeroes() {
         String apiFunc = "heroes";
         return new JSONArray(getData(apiBase + apiFunc));
     }
@@ -306,7 +306,7 @@ class OpenDotaAPIWrapper {
      * @param path location to store image.
      * @throws IOException if there is an IO exception when storing image.
      */
-    static void getHeroImage(int id, String path) throws IOException {
+    public static void getHeroImage(int id, String path) throws IOException {
         JSONArray heroes = getHeroStats();
 
         // TODO: Handle index inconsistency

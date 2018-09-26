@@ -1,6 +1,6 @@
-package me.dunit.dota;
+package me.dunit.dota.test;
 
-import org.junit.Ignore;
+import me.dunit.dota.OpenDotaAPIWrapper;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -22,117 +22,117 @@ public class OpenDotaAPIWrapperTest {
     public final TemporaryFolder tmpFolder = new TemporaryFolder();
 
     @Test
-    public void getMatches() throws Exception {
+    public void getMatches() {
         OpenDotaAPIWrapper.getMatches(ID);
     }
 
     @Test
-    public void getPlayer() throws Exception {
+    public void getPlayer() {
         OpenDotaAPIWrapper.getPlayer(ID);
     }
 
     @Test
-    public void getPlayerWL() throws Exception {
+    public void getPlayerWL() {
         OpenDotaAPIWrapper.getPlayerWL(ID);
     }
 
     @Test
-    public void getPlayerRecentMatches() throws Exception {
+    public void getPlayerRecentMatches() {
         OpenDotaAPIWrapper.getPlayerRecentMatches(ID);
     }
 
     @Test
-    public void getPlayerMatches() throws Exception {
+    public void getPlayerMatches() {
         OpenDotaAPIWrapper.getPlayerMatches(ID);
     }
 
     @Test
-    public void getPlayerHeroes() throws Exception {
+    public void getPlayerHeroes() {
         OpenDotaAPIWrapper.getPlayerHeroes(ID);
     }
 
     @Test
-    public void getPlayerPeers() throws Exception {
+    public void getPlayerPeers() {
         OpenDotaAPIWrapper.getPlayerPeers(ID);
     }
 
     @Test
-    public void getPlayerPros() throws Exception {
+    public void getPlayerPros() {
         OpenDotaAPIWrapper.getPlayerPros(ID);
     }
 
     @Test
-    public void getPlayerTotals() throws Exception {
+    public void getPlayerTotals() {
         OpenDotaAPIWrapper.getPlayerTotals(ID);
     }
 
     @Test
-    public void getPlayerCounts() throws Exception {
+    public void getPlayerCounts() {
         OpenDotaAPIWrapper.getPlayerCounts(ID);
     }
 
     @Test
-    public void getPlayerWardMap() throws Exception {
+    public void getPlayerWardMap() {
         OpenDotaAPIWrapper.getPlayerWardMap(ID);
     }
 
     @Test
-    public void getPlayerWordCloud() throws Exception {
+    public void getPlayerWordCloud() {
         OpenDotaAPIWrapper.getPlayerWordCloud(ID);
     }
 
     @Test
-    public void getPlayerRatings() throws Exception {
+    public void getPlayerRatings() {
         OpenDotaAPIWrapper.getPlayerRatings(ID);
     }
 
     @Test
-    public void getPlayerRankings() throws Exception {
+    public void getPlayerRankings() {
         OpenDotaAPIWrapper.getPlayerRankings(ID);
     }
 
     @Test
-    public void getHeroStats() throws Exception {
+    public void getHeroStats() {
         OpenDotaAPIWrapper.getHeroStats();
     }
 
     @Test
-    public void postPlayerRefresh() throws Exception {
+    public void postPlayerRefresh() {
         OpenDotaAPIWrapper.postPlayerRefresh(ID);
     }
 
     @Test
-    public void getProPlayers() throws Exception {
+    public void getProPlayers() {
         OpenDotaAPIWrapper.getProPlayers();
     }
 
     @Test
-    public void getProMatches() throws Exception {
+    public void getProMatches() {
         OpenDotaAPIWrapper.getProMatches();
     }
 
     @Test
-    public void getPublicMatches() throws Exception {
+    public void getPublicMatches() {
         OpenDotaAPIWrapper.getPublicMatches();
     }
 
     @Test
-    public void getDistributions() throws Exception {
+    public void getDistributions() {
         OpenDotaAPIWrapper.getDistributions();
     }
 
     @Test
-    public void getStatus() throws Exception {
+    public void getStatus() {
         OpenDotaAPIWrapper.getStatus();
     }
 
     @Test
-    public void getHealth() throws Exception {
+    public void getHealth() {
         OpenDotaAPIWrapper.getHealth();
     }
 
     @Test
-    public void getHeroes() throws Exception {
+    public void getHeroes() {
         OpenDotaAPIWrapper.getHeroes();
     }
 
